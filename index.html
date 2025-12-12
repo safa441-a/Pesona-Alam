@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width-device-whidth, initial-scale=1.0">
+<title> Alam Hijau </title>
+</head>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(125, 153, 124);
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(185, 201, 172);
+
+}
+
+nav {
+    background-color: rgba(34, 139, 34, 0.85);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav a {
+    color: #e8f5e9;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    transition: all 0.3s ease;
+    margin: 0 15px;
+}
+
+nav li {
+    display: inline-block;
+margin: 0 15px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a:hover {
+    color: #c8e6c9;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 3px;
+}
+
+.container {
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 20px;
+      border: 3px solid #000;
+      background-color: #fff;
+      width: fit-content;
+      margin: auto;
+}
+
+    .card {
+      background-color: #e8f5e9;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      padding: 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+h3, p {
+    text-align: left;
+    color: cream;
+}
+
+h2 {
+    text-align: center;
+}
+
+.active,.artikel,.relawan{
+    background: rgba(255, 255, 255, 0.88);
+    padding: 35px;
+    margin: 120px auto;
+    width: 85%;
+    border-radius: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+.active p {
+    text-align: center;
+}
+
+
+.section-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+
+.section-box {
+    max-width: 80%;
+    width: 100%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+
+.section-box h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.section-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin-left: 5px;
+
+}
+
+.gabungan {
+    display: flex;
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: scale (2.05);
+}
+
+.section-title {
+text-align: center;
+max-width: 800px;
+}
+
+main {
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.artikel {
+    background-color: rgb(18, 92, 18);
+    color: white;
+    padding: 20px;
+    margin: 15px auto;
+    width: 78%;
+    border: 10px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.artikel:hover {
+    background-color: #29802d;
+    transform: scale(1.05);
+}
+
+#artikel p {
+    text-align: center;
+    font-size: 15px;
+}
+
+.home-section {
+    background-image: url('https://img.freepik.com/premium-photo/jungle-with-tiger-tiger-it_1356530-3710.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-overlay {
+    background: rgba(255, 255, 255, 0.55);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.home-text h3 {
+    color: #000;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.home-text h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.btn-started {
+    padding: 12px 24px;
+    background: #ff7b4a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+.btn-started:hover {
+    background: #ff9067;
+}
+
+footer {
+    background-color: #a3bd8b;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+#form-saran {
+    padding: 50px 20px;
+    margin-top: 40px;
+    background-color: #e7f4ec; 
+    border-radius: 12px;
+}
+
+.judul-form {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-alam {
+    max-width: 450px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.label-form {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #3f5c4a;
+}
+
+.input-form {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bcd5c7;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f8fdf9;
+}
+
+.btn-kirim {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-weight: bold;
+    background-color: #134924;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-kirim:hover {
+    background-color: #68a77c;
+}
+
+#tabel-alam {
+    padding: 50px 20px;
+    margin-top: 40px;
+    background-color: #e1f3ea;
+    border-radius: 12px;
+}
+
+.judul-tabel {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tabel-alam {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tabel-alam th {
+    background-color: #88bfa1;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabel-alam td {
+    padding: 12px;
+    border-bottom: 1px solid #f3f5f3;
+    text-align: center;
+}
+
+.tabel-alam tr:hover {
+    background-color: #f1f8f5;
+}
+
+@media (max-width: 600px) {
+}
+    
+</style>
+
+<body>
+    <header>
+<nav>
+<ul class="nav-menu">
+<li><a href="#Home"> Home </a></li>
+<li><a href="#Alam"> Alam Hijau Gallery </a></li>
+<li><a href="#Relawan"> Relawan Muda Peduli </a></li>
+<li><a href="#Saran"> Saran Anda </a></li>
+<li><a href="#Contact"> Contact </a></li>
+</ul>
+</nav>
+
+    <section id="Home" class="section-container home-section">
+        <div class="home-overlay">
+<div class="home-text">
+<h3> Alam Hijau </h3>
+<h1> Hijaukan bumi, hijaukan hati</h1>
+<p> "Alam Hijau" adalah tempat edukasi lingkungan untuk membangun kesadaran menjaga bumi
+    agar tetap lestari dan indah
+</p>
+
+<a href ="#Alam"class="btn-started"> Get Started </a>
+</div>
+</div>
+</section>
+<br> <br>
+<br><br>
+
+<section id="Alam" class="alam">
+    <h2> Alam Hijau Gallery: </h2>
+    <br><br>
+    <br><br>
+<div class="gabungan">
+    <div class="container">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwhyFSD40mD3Hp52ttQze60zd7tSblB8nB7w&s" alt="Hutan Mangrove">
+      <h3>Hutan Mangrove, kalimantan timur</h3>
+      <p>Ekosistem hutan yang tumbuh di perbatasan antara daratan dan laut, tepat di sepanjang 
+        garis pantai yang dipengaruhi oleh pasang surut air laut.
+      </p>
+      </div>
+    </div>
+    <br>
+
+<div class="container">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHEzUgJkfLE5iOmHN6F6uEM-ZsLSRoqPTg5Q&s" alt="Gunung Bromo">
+      <h3>Gunung Bromo</h3>
+      <p>Gunung berapi aktif di Jawa Timur, Indonesia, yang dikenal sebagai objek wisata alam ikonik di kawasan
+        Taman Nasional Bromo Tengger Semeru.
+      </p>
+      </div>
+    </div>
+</div>
+<br><br>
+<br><br>
+
+<div class="container">
+    <div class="card">
+      <img src="https://asset.kompas.com/crops/eT1HcuOkNS6u82VDfC0zkL2PrZI=/0x0:780x520/1200x800/data/photo/2019/09/25/5d8b167b714d4.jpg" alt="Hutan Djawatan">
+      <h3>Hutan Djawatan</h3>
+      <p>Hutan wisata di Banyuwangi, Jawa Timur, yang terkenal dengan deretan pohon trembesi tua yang
+        menjulang tinggi, mirip Hutan Fangorn di film Lord of the rings
+      </p>
+      </div>
+    </div>
+
+<br><br>
+<br><br>
+
+<section id="Relawan" class="section-container">
+    <div class="section-box">
+    <h2> Relawan Muda Peduli </h2>
+    <br><br>
+<p><u>“Relawan Muda Alam Hijau”</u> adalah gerakan yang lahir dari semangat anak muda untuk mencintai, menjaga, 
+dan merawat bumi. Di tengah dunia yang semakin sibuk dan penuh tantangan lingkungan, para relawan ini 
+hadir sebagai penyala harapan bagi masa depan alam Indonesia. Mereka percaya bahwa perubahan besar 
+selalu dimulai dari langkah kecil — menanam pohon, membersihkan sungai, mengedukasi masyarakat, hingga 
+membangun kesadaran bahwa bumi adalah rumah yang harus dijaga bersama</p>
+<br><br>
+
+<p>Setiap kegiatan yang dilakukan <b><u>selalu berlandaskan pada nilai-nilai kebersamaan, kepedulian, dan 
+keberlanjutan</u></b>. Para relawan bekerja tanpa pamrih, bergotong royong dalam semangat solidaritas yang 
+tulus. Dari desa terpencil hingga kota besar, mereka hadir membawa pesan yang sama: "<i><u>Hijaukan bumi, 
+hijaukan hati</u></i>.” Bersama Relawan Muda Alam Hijau, kita tidak hanya menanam pohon — kita menanam masa depan.</p> 
+</div>
+</section>
+<br> <br>
+<br><br>
+
+<section id="Saran" class="section-container">
+    <div class="section-box">
+    <h2 class="judul-form"> Saran Anda</h2>
+    <p> Isi form berikut untuk memberikan masukan terkait pelestarian lingkungan.</p>
+    <form class="Saran">
+        <label class="label-form"> Nama </label>
+        <input type="text" class="input-form" placeholder="Masukan nama anda" required>
+
+        <label class="label-form"> Email </label>
+        <input type="email" class="input-form" placeholder="Masukan email anda" required>
+
+<label class="label-form"> Jenis Lingkungan </label>
+<select class="input-form" required>
+    <option value="">-- Pilih Lingkungan -- </option>
+    <option>Hutan</option>
+    <option>Laut</option>
+    <option>Gunung</option>
+    <option>Sungai</option>
+</select>
+
+        <label class="label-form"> Saran Anda </label>
+        <textarea class="input-form" rows="3" placeholder="Tuliskan Saran Anda. ." required></textarea>
+
+        <button type="submit" class="btn-kirim"> Kirim Saran </button>
+    </form>
+</section> 
+<br><br>
+<br><br>
+
+<section id="Artikel" class="artikel">
+<h2> Artikel Alam terkini: </h2>
+<br><br>
+<p style="text-align: center;">Disini saya lampirkan artikel yang bisa anda baca, klik salah satu artikel untuk membaca lebih lanjut: </p>
+<br><br>
+<div class="artikel" id="artikel1"> Gunung di maluku barat daya </div>
+<div class="artikel" id="artikel2"> Indonesia dinobatkan menjadi negara terindah </div>
+<div class="artikel" id="artikel3"> Pesona alam di indonesia </div>
+</section>
+</div>
+
+<br> <br>
+<br><br>
+
+<section id="Keindahan negara" class="section-container">
+    <div class="section-box">
+    <h2 class="judul-section"> Kategori Keindahan Negara di Dunia </h2>
+    <p> Berikut adalah top 3 negara yang dinilai memiliki keindahan alam terbaik di dunia.
+        Berdasarkan survey berbagai jurnal wisata internasional.
+        <br>
+     Referensi Jurnal: <a href="https://www.kompas.tv/nasional/261095/negara-terindah-di-dunia-adalah-indonesia-selandia-baru-lewat"
+    target="_blank">
+https://www.kompas.tv/nasional/261095/negara-terindah-di-dunia-adalah-indonesia-selandia-baru-lewat </a>
+    </p>
+
+    <table class="tabel-alam">
+        <thead>
+            <tr>
+                <th> No </th>
+                <th> Negara </th>
+                 <th> Skor </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> 1. </td>
+                <td> Indonesia </td>
+                <TD> 7.77 </TD>
+            </tr>
+
+            <tr>
+                <td> 2. </td>
+                <td> New Zealand  </td>
+                <td> 7.27 </td>
+            </tr>
+
+            <tr>
+                <td> 3. </td>
+                <td> Colombia </td>
+                <td> 7.16 </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+<td><a href="https://www.kompas.tv/nasional/261095/negara-terindah-di-dunia-adalah-indonesia-selandia-baru-lewat" target="_blank"></a></td>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+</section>
+
+<section id="Contact" class="section-container">
+    <div class="section-box">
+<h2> Contact: </h2>
+<br><br>
+<p>Gallery ini dibuat untuk memperlihatkan pada masyarakat <b>khusus nya warga Indonesia</b>, bahwa untuk
+melihat keindahan alam tidak harus keluar negeri.Tetapi bisa kalian lihat di negeri kita tercinta ini,
+keindahan alam, budaya, ras, dll. Semua nya telah ada di NKRI ini, maka <i>kita harus menjaga dan merawat
+apa yang telah ada dan tercipta disini</i>. </p>
+</div>
+</section>
+
+<br><br>
+<footer>
+    <h2> &copy;  Hijaukan alam bersama-sama </h2>
+</footer>
+
+<script>
+//muncul notif sebelum buka link
+document.getElementById("artikel1").onclick = function( ) {
+    let tanya = prompt("kamu mau buka artikel ini? (ya, aku mau / tidak, aku tidak mau)");
+    if (tanya == "ya, aku mau") {
+    window.open("https://travel.kompas.com/read/2025/02/17/080800027/gunung-kerbau-di-maluku-barat-daya-punya-keindahan-alam-yang-instagramable");
+} else {
+    alert ("baiklah, tidak akan dibuka. Silakan kembali");
+}
+}
+
+document.getElementById("artikel2").onclick = function( ) {
+    let tanya = prompt ("kamu mau buka artikel ini? (ya, aku mau / tidak, aku tidak mau)");
+    if (tanya == "ya, aku mau") {
+        window.open("https://www.kompas.com/properti/read/2022/02/13/133925021/indonesia-dinobatkan-jadi-negara-terindah-di-dunia-kalahkan-selandia?page=all");
+    } else {
+        alert("baiklah, tidak akan dibuka. Silakan kembali");
+    }
+    }
+
+document.getElementById("artikel3").onclick = function( ) {
+    let tanya = prompt ("kamu mau buka artikel ini? (ya, aku mau / tidak, aku tidak mau)");
+    if (tanya == "ya, aku mau") {
+        window.open("https://stipram.ac.id/206-5-desa-wisata-di-indonesia-penuh-pesona-alam.html");
+    }else {
+        alert("baiklah, tidak akan dibuka. Silakan kembali");
+    }
+    }
+
+</script>
+</main>
+</body>
+</html>
